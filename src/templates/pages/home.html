@@ -1,18 +1,92 @@
 {% extends 'base.html' %}
-{% block title %}Home{% endblock %}
+{% load static %}
+{% block title %}Habeshut{% endblock %}
 {% block content %}
-  <div class="flex flex-col h-screen border border-black place-content-center px-52">
-    <h1 class="font-semibold text-blue-900 underline">Hello World!</h1>
-    <p class="text-gray-500">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur eius
-      consequatur pariatur saepe possimus dolor, impedit perferendis perspiciatis
-      debitis accusamus, harum quia quasi rerum dignissimos, minus beatae in! Quod
-    </p>
-    <p class="font-bold text-gray-500 font-satoshi">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur eius
-      consequatur pariatur saepe possimus dolor, impedit perferendis perspiciatis
-      debitis accusamus, harum quia quasi rerum dignissimos, minus beatae in! Quod
-    </p>
-    <button class="py-5 text-white bg-black rounded-md hover:bg-blue-700">Submit</button>
-  </div>
+  <section class="grid grid-cols-3 grid-rows-2 gap-20 pt-16 pb-10 pr-10 pl-14 rounded-3xl bg-light-primary">
+    <div class="col-span-1 row-span-1 row-start-1">
+      <p class="font-medium text-1xl">Capital raised</p>
+      <h4 class="mt-2 text-5xl font-bold">$1.5M+</h4>
+      <p class="mt-6 font-light text-1xl">
+        Crafted for your comfort, to enhance the beauty of your present lifestyle but also paves the way for a more aesthetically pleasing and harmonious future for both you and your cherished family.
+      </p>
+    </div>
+    <div class="flex flex-col col-span-2 row-span-2 gap-5">
+      <h1 class="font-bold text-[90px] leading-none">We craft the future dwelling.</h1>
+      <img src="{% static 'images/building_1.jpg' %}"
+           width="1076"
+           height="712"
+           class="rounded-3xl"
+           alt="Exterior view of modern apartment building against a cloudy sky.">
+    </div>
+    <div class="flex flex-col col-span-1 row-span-1 row-start-2 gap-5">
+      <p class="text-xl font-medium">Introduction</p>
+      <h3 class="text-4xl font-medium">A vision for liveable, sustainable & affordable.</h3>
+      <button class="py-3 rounded-2xl px-7 btn-light w-fit">Start Exploring</button>
+    </div>
+  </section>
+  <section class="flex gap-10 my-11">
+    <img src="{% static 'images/building_2.jpg' %}"
+         width="250"
+         height=""
+         class="rounded-3xl"
+         alt="Exterior view of modern apartment building against a cloudy sky.">
+    <div class="flex flex-col items-end gap-5 pt-16 pb-10 pl-40 pr-40 bg-light-primary rounded-3xl">
+      <div>
+        <p class="font-medium text-1xl">Satisfied Clients</p>
+        <h4 class="mt-2 text-5xl font-bold">8.4M+</h4>
+      </div>
+      <h3 class="text-5xl font-bold">
+        We can bring to life everything you've ever envisioned and dreamed of – your ideals and desires are our creations.
+      </h3>
+      <p class="mt-6 font-light text-1xl">
+        Our purpose is to transform your wildest dreams into reality. Regardless of how unconventional your vision may be, we possess the capability to craft your dream home, fulfilling your every desire.
+      </p>
+      <button class="self-start px-10 py-3 rounded-2xl btn-light w-fit">See More</button>
+    </div>
+  </section>
+  <section class="grid grid-cols-3 p-10 gap-y-20 gap-x-5 bg-light-primary rounded-3xl">
+    <h2 class="col-span-full text-6xl font-bold w-[450px]">What our customers say</h2>
+    {% for in in '012'|make_list %}
+      <div class="flex flex-col p-5 bg-white gap-7 rounded-2xl">
+        <p>
+          They make it super easy and safe to find a room for rent, prioritizing both convenience and safety. The customer support team is exceptionally responsive and genuinely helpful, ensuring a smooth experience. I wholeheartedly endorse this platform.
+        </p>
+        <div class="self-end">
+          <p class="text-xl font-medium">Ashley Cooper</p>
+          <div class="flex ml-auto w-fit">
+            {% for i in '012345'|make_list %}
+              <img src="{% static 'images/star.svg' %}"
+                   alt="A yellow star"
+                   width=""
+                   height="">
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </section>
+  <section class="grid grid-cols-3 p-10 gap-y-20 gap-x-5 bg-light-primary rounded-3xl my-11">
+    <h2 class="text-6xl font-bold col-span-full">Services</h2>
+    <div class="flex flex-col p-5 pb-16 bg-white gap-7 rounded-2xl">
+      <h3 class="self-end text-4xl font-medium">01</h3>
+      <h3 class="text-4xl font-medium w-60">Furniture Design</h3>
+      <p>
+        The design of furniture holds substantial influence over the aesthetics, ambiance, and usability of an area, exerting a profound effect on our everyday experiences.
+      </p>
+    </div>
+    <div class="flex flex-col p-5 pb-16 bg-white gap-7 rounded-2xl">
+      <h3 class="self-end text-4xl font-medium">02</h3>
+      <h3 class="text-4xl font-medium w-60">Interior Details</h3>
+      <p>
+        Incorporating interior detailing introduces dimension, tactile qualities, and captivating visual elements to a room, enhancing the overall design through the addition of those final embellishments.
+      </p>
+    </div>
+    <div class="flex flex-col p-5 pb-16 bg-white gap-7 rounded-2xl">
+      <h3 class="self-end text-4xl font-medium">03</h3>
+      <h3 class="text-4xl font-medium w-60">Home Revamping</h3>
+      <p>
+        The design of furniture holds substantial influence over the aesthetics, ambiance, and usability of an area, exerting a profound effect on our everyday experiences.
+      </p>
+    </div>
+  </section>
 {% endblock %}
