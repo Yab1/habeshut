@@ -15,9 +15,66 @@
     </title>
     {% include 'head/css.html' %}
   </head>
-  <body>
-    <div>
+  <body class="flex flex-col font-inter text-light-primary mx-14 my-11">
+    <header class="flex items-center justify-between overflow-hidden rounded-full mb-11 bg-light-primary">
+      <a href=""
+         class="flex items-center ml-12 text-xl font-bold font-satoshi">
+        <img src="{% static 'images/logo_dark.svg' %}"
+             alt="Habeshut logo"
+             width="40"
+             height="40">
+      Habeshut</a>
+      <nav>
+        <ul class="flex gap-12">
+          <li>
+            <a href="" class="text-lg font-medium">Home</a>
+          </li>
+          <li>
+            <a href="" class="text-lg font-medium">Property</a>
+          </li>
+          <li>
+            <a href="" class="text-lg font-medium">About</a>
+          </li>
+          <li>
+            <a href="" class="text-lg font-medium">Agents</a>
+          </li>
+        </ul>
+      </nav>
+      <button class="py-5 pl-10 pr-8 rounded-l-lg btn-light">Contact Us</button>
+    </header>
+    <main>
       {% block content %}{% endblock %}
-    </div>
+    </main>
+    <footer class="grid grid-cols-3 p-10 text-white gap-7 bg-dark-primary rounded-3xl">
+      <h2 class="col-span-2 font-medium text-8xl ">Start Your Project Now!</h2>
+      <button class="h-full px-12 text-lg font-bold text-white place-self-end rounded-3xl bg-dark-secondary w-fit">
+        Contact Us
+      </button>
+      <p class="text-2xl font-thin">Made for you convenience for a more beautiful future for you and your family</p>
+      <div class="flex items-center justify-between py-5 mt-24 overflow-hidden rounded-full px-14 bg-dark-secondary col-span-full">
+        <a href="" class="flex items-center text-xl font-bold font-satoshi">
+          <img src="{% static 'images/logo_light.svg' %}"
+               alt="Habeshut logo"
+               width="40"
+               height="40">
+        Habeshut</a>
+        <nav>
+          <ul class="flex gap-12">
+            <li>
+              <a href="" class="text-lg font-medium">Home</a>
+            </li>
+            <li>
+              <a href="" class="text-lg font-medium">Property</a>
+            </li>
+            <li>
+              <a href="" class="text-lg font-medium">About</a>
+            </li>
+            <li>
+              <a href="" class="text-lg font-medium">Agents</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
   </body>
 </html>
