@@ -5,8 +5,7 @@ module.exports = {
     extend: {
       backgroundColor: {
         light: {
-          primary: "#FFFFFF",
-          secondary: "#F7F8F8",
+          primary: "#F7F8F8",
         },
         dark: {
           primary: "#050F27",
@@ -17,13 +16,10 @@ module.exports = {
         light: {
           primary: "#050F27",
         },
-        dark: {
-          primary: "#FFFFFF",
-        },
       },
     },
     fontFamily: {
-      satoshi: ["Satoshi"],
+      inter: ["Inter", "sans-serif"],
     },
   },
   plugins: [],
