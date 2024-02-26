@@ -556,16 +556,8 @@ video {
   display: flex;
 }
 
-.grid {
-  display: grid;
-}
-
 .h-screen {
   height: 100vh;
-}
-
-.grid-cols-1 {
-  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -574,10 +566,6 @@ video {
 
 .place-content-center {
   place-content: center;
-}
-
-.content-center {
-  align-content: center;
 }
 
 .rounded-md {
@@ -598,10 +586,6 @@ video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-.p-10 {
-  padding: 2.5rem;
-}
-
 .px-52 {
   padding-left: 13rem;
   padding-right: 13rem;
@@ -612,8 +596,12 @@ video {
   padding-bottom: 1.25rem;
 }
 
-.font-black {
-  font-weight: 900;
+.font-satoshi {
+  font-family: Satoshi;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 .font-semibold {
@@ -623,11 +611,6 @@ video {
 .text-blue-900 {
   --tw-text-opacity: 1;
   color: rgb(30 58 138 / var(--tw-text-opacity));
-}
-
-.text-gray-700 {
-  --tw-text-opacity: 1;
-  color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
 .text-gray-500 {
@@ -644,12 +627,59 @@ video {
   text-decoration-line: underline;
 }
 
+@font-face {
+  font-family: "Satoshi";
+
+  src: url("fonts/satoshi/Satoshi-Light.woff2") format("woff2"),
+    url("fonts/satoshi/Satoshi-Bold.woff") format("woff");
+
+  font-weight: 300;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+
+  src: url("fonts/satoshi/Satoshi-Regular.woff2") format("woff2"),
+    url("fonts/satoshi/Satoshi-Regular.woff") format("woff");
+
+  font-weight: normal;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+
+  src: url("fonts/satoshi/Satoshi-Medium.woff2") format("woff2"),
+    url("fonts/satoshi/Satoshi-Medium.woff") format("woff");
+
+  font-weight: 500;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+
+  src: url("fonts/satoshi/Satoshi-Bold.woff2") format("woff2"),
+    url("fonts/satoshi/Satoshi-Bold.woff") format("woff");
+
+  font-weight: bold;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
 .hover\:bg-blue-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(29 78 216 / var(--tw-bg-opacity));
-}
-
-.hover\:text-pink-600:hover {
-  --tw-text-opacity: 1;
-  color: rgb(219 39 119 / var(--tw-text-opacity));
 }
