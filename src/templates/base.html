@@ -27,13 +27,13 @@
       <nav>
         <ul class="flex gap-12">
           <li>
-            <a href="" class="text-lg font-medium">Home</a>
+            <a href="{% url 'home' %}" class="text-lg font-medium">Home</a>
           </li>
           <li>
-            <a href="" class="text-lg font-medium">Property</a>
+            <a href="{% url 'listings:properties' %}" class="text-lg font-medium">Property</a>
           </li>
           <li>
-            <a href="" class="text-lg font-medium">About</a>
+            <a href="{% url 'about' %}" class="text-lg font-medium">About</a>
           </li>
           <li>
             <a href="" class="text-lg font-medium">Agents</a>
