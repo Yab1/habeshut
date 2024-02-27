@@ -46,7 +46,7 @@
   </section>
   <section class="grid grid-cols-3 p-10 gap-y-20 gap-x-5 bg-light-primary rounded-3xl">
     <h2 class="col-span-full text-6xl font-bold w-[450px]">What our customers say</h2>
-    {% for in in '012'|make_list %}
+    {% for i in '012'|make_list %}
       <div class="flex flex-col p-5 bg-white gap-7 rounded-2xl">
         <p>
           They make it super easy and safe to find a room for rent, prioritizing both convenience and safety. The customer support team is exceptionally responsive and genuinely helpful, ensuring a smooth experience. I wholeheartedly endorse this platform.
@@ -54,7 +54,7 @@
         <div class="self-end">
           <p class="text-xl font-medium">Ashley Cooper</p>
           <div class="flex ml-auto w-fit">
-            {% for i in '012345'|make_list %}
+            {% for j in '012345'|make_list %}
               <img src="{% static 'images/star.svg' %}"
                    alt="A yellow star"
                    width=""
