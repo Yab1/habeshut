@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Sunshine Villa{% endblock %}
+{% block content %}
+ <section class="mb-11">
+  <div class="flex items-center justify-between pl-10 pr-3 border-l-4 border-dark-primary">
+   <div>
+    <h2 class="text-6xl font-medium">Sunshine Villa</h2>
+    <p class="text-xl">Addis Ababa, Ethiopia</p>
+   </div>
+   <div class="flex gap-3">
+    <a href="{% url 'home' %}">Home</a> /
+    <a href="{% url 'listings:properties' %}">Properties</a> /
+    <p>Sunshine Villa</p>
+   </div>
+  </div>
+  <div class="overflow-hidden my-11 w-fit">
+   <img src="{% static 'images/buildings/slide-3.jpg' %}"
+        alt=""
+        width="1000"
+        height=""
+        class="rounded-tr-[200px] rounded-br-xl">
+   <div class="flex justify-center gap-2 mt-5">
+    <div class="w-10 h-3 rounded bg-dark-primary"></div>
+    <div class="w-5 h-3 bg-gray-400 rounded"></div>
+   </div>
+  </div>
+  <section class="grid grid-cols-8 p-5 gap-y-10 bg-light-primary rounded-3xl">
+   <div class="flex items-center col-span-2 gap-2 place-self-center">
+    <img src="{% static 'images/money.png' %}" alt="" width="60" height="60">
+    <p class="text-3xl font-medium">$5.0M</p>
+   </div>
+   <div class="col-start-4 col-span-full">
+    <h3 class="relative mb-10 text-3xl font-medium after:left-0 after:-bottom-2 after:absolute after:h-1 after:w-16 after:rounded after:bg-dark-secondary">
+     Description
+    </h3>
+    <p>
+     Beautiful villa located in the heart of Addis Ababa, offering stunning views of the city skyline and surrounding mountains. This spacious property features modern architecture and luxurious amenities, including a swimming pool, landscaped gardens, and a rooftop terrace. Perfect for families seeking a peaceful retreat in the bustling capital.
+    </p>
+   </div>
+   <div class="col-span-2">
+    <h3 class="relative mb-10 text-3xl font-medium after:left-0 after:-bottom-2 after:absolute after:h-1 after:w-16 after:rounded after:bg-dark-secondary">
+     Quick Summary
+    </h3>
+    <ul class="flex flex-col gap-3">
+     <li class="flex justify-between font-semibold">
+      <p>Location:</p>
+      <p class="font-normal">Addis Ababa, Ethiopia</p>
+     </li>
+     <li class="flex justify-between font-semibold">
+      <p>Property Type:</p>
+      <p class="font-normal">Villa</p>
+     </li>
+     <li class="flex justify-between font-semibold">
+      <p>Status:</p>
+      <p class="font-normal">Sale</p>
+     </li>
+     <li class="flex justify-between font-semibold">
+      <p>Area:</p>
+      <p class="font-normal">
+       360<sup>m2</sup>
+      </p>
+     </li>
+     <li class="flex justify-between font-semibold">
+      <p>Beds:</p>
+      <p class="font-normal">4</p>
+     </li>
+     <li class="flex justify-between font-semibold">
+      <p>Baths:</p>
+      <p class="font-normal">2</p>
+     </li>
+    </ul>
+   </div>
+   <div class="col-start-4 col-span-full">
+    <h3 class="relative mb-10 text-3xl font-medium after:left-0 after:-bottom-2 after:absolute after:h-1 after:w-16 after:rounded after:bg-dark-secondary">
+     Amenities
+    </h3>
+    <ul class="grid grid-cols-3 gap-y-3">
+     <li>- Balcony</li>
+     <li>- Outdoor Kitchen</li>
+     <li>- Cable Tv</li>
+     <li>- Deck</li>
+     <li>- Tennis Courts</li>
+     <li>- Internet</li>
+     <li>- Parking</li>
+     <li>- Sun Room</li>
+     <li>- Concrete Flooring</li>
+    </ul>
+   </div>
+  </section>
+ </section>
+{% endblock %}
