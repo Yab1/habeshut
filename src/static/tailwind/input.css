@@ -6,3 +6,6 @@
 .btn-light {
   @apply text-lg font-bold text-white bg-dark-primary hover:bg-dark-secondary;
 }
+.btn-dark {
+  @apply text-lg font-bold text-white bg-light-primary;
+}
