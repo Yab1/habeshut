@@ -1,84 +1,83 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
- <section>
-  <div class="relative p-5 overflow-hidden bg-light-primary rounded-3xl">
-   <img src="{% static 'images/buildings/slide-1.jpg' %}"
-        alt=""
-        class="rounded-xl"
-        width=""
-        height="">
-   <div class="absolute inset-0 flex flex-col gap-2 p-20 text-white">
-    <p>Addis Ababa, Ethiopia</p>
-    <h2 class="text-6xl font-medium">Sunshine Villa</h2>
-    <div class="flex gap-20">
-     <p class="self-end text-3xl font-medium rounded-2xl">Buy | $5.0M</p>
-    </div>
-   </div>
-  </div>
-  <div class="my-11">
-   <button class="p-5 text-lg font-medium bg-light-primary">Buy</button>
-   <button class="p-5 text-lg font-medium text-gray-500">Rent</button>
-   <div class="flex justify-between px-10 py-5 bg-light-primary">
-    <div class="flex gap-20">
-     <div>
-      <p class="font-medium">Location</p>
-      <button class="flex items-center gap-5">
-       <p class="text-gray-500">Addis Ababa, Ethiopia</p>
-       <div>
-        <img src="{% static 'images/down-arrow.png' %}" alt="" width="" height="">
-       </div>
-      </button>
-     </div>
-     <div>
-      <p class="font-medium">Type</p>
-      <button class="flex items-center gap-5">
-       <p class="text-gray-500">Home</p>
-       <div>
-        <img src="{% static 'images/down-arrow.png' %}" alt="" width="" height="">
-       </div>
-      </button>
-     </div>
-     <div>
-      <p class="font-medium">Price Range</p>
-      <button class="flex items-center gap-5">
-       <p class="text-gray-500">$200 - $350</p>
-       <div>
-        <img src="{% static 'images/down-arrow.png' %}" alt="" width="" height="">
-       </div>
-      </button>
-     </div>
-    </div>
-    <button class="px-10 py-3 btn-light rounded-xl">Search</button>
-   </div>
-  </div>
-  <div class="mx-5">
-   <h2 class="text-5xl font-bold">Latest Properties</h2>
-   <p class="w-[450px]">
-    Discover our exclusive selection of the finest one-of-a-kind luxury properties architectural masterpieces.
-   </p>
-  </div>
-  <div class="grid grid-cols-3 gap-5 my-11">
-   {% for i in '12345'|make_list %}
-    <div class="flex flex-col gap-3 p-5 bg-light-primary rounded-xl">
-     <img src="{% static 'images/buildings/building_01.jpg' %}"
-          alt=""
-          class="rounded-lg"
-          width=""
-          height="">
-     <h3 class="text-2xl font-bold">Perum griya asri</h3>
-     <p class="text-gray-500">Bogor, Jawa Barat</p>
-     <div class="flex items-center justify-between">
-      <p class="text-xl font-medium">Rent | $25,000</p>
-      <p class="p-2 text-lg bg-white">
-       360<sup>m2</sup> <span class="text-gray-500">Living Area</span>
-      </p>
-     </div>
-     <button class="py-3 btn-light rounded-xl">
-      <a href="{% url 'listings:property_detail' 1 %}">View Details</a>
-     </button>
-    </div>
-   {% endfor %}
-  </div>
- </section>
+     <section>
+          <div class="relative p-5 overflow-hidden bg-light-primary rounded-3xl">
+               <img src="{% static 'images/buildings/slide-1.jpg' %}"
+                    alt=""
+                    class="rounded-xl"
+                    width=""
+                    height="">
+               <div class="absolute inset-0 flex flex-col gap-2 p-20 text-white">
+                    <p>Addis Ababa, Ethiopia</p>
+                    <h2 class="text-6xl font-medium">Sunshine Villa</h2>
+                    <div class="flex gap-20">
+                         <p class="self-end text-3xl font-medium rounded-2xl">Buy | $5.0M</p>
+                    </div>
+               </div>
+          </div>
+          <div class="my-11">
+               <button class="p-5 text-lg font-medium bg-light-primary">Buy</button>
+               <button class="p-5 text-lg font-medium text-gray-500">Rent</button>
+               <div class="flex justify-between px-10 py-5 bg-light-primary">
+                    <div class="flex gap-20">
+                         <div>
+                              <p class="font-medium">Location</p>
+                              <button class="flex items-center gap-5">
+                                   <p class="text-gray-500">Addis Ababa, Ethiopia</p>
+                                   <div>
+                                        <img src="{% static 'images/down-arrow.png' %}" alt="" width="" height="">
+                                   </div>
+                              </button>
+                         </div>
+                         <div>
+                              <p class="font-medium">Type</p>
+                              <button class="flex items-center gap-5">
+                                   <p class="text-gray-500">Home</p>
+                                   <div>
+                                        <img src="{% static 'images/down-arrow.png' %}" alt="" width="" height="">
+                                   </div>
+                              </button>
+                         </div>
+                         <div>
+                              <p class="font-medium">Price Range</p>
+                              <button class="flex items-center gap-5">
+                                   <p class="text-gray-500">$200 - $350</p>
+                                   <div>
+                                        <img src="{% static 'images/down-arrow.png' %}" alt="" width="" height="">
+                                   </div>
+                              </button>
+                         </div>
+                    </div>
+                    <button class="px-10 py-3 btn-light rounded-xl">Search</button>
+               </div>
+          </div>
+          <section class="bg-light-primary p-10 grid grid-cols-3 gap-10 rounded-3xl mb-11">
+               <div class="col-span-full">
+                    <h2 class="text-5xl font-bold">Latest Properties</h2>
+                    <p class="w-[450px]">
+                         Discover our exclusive selection of the finest one-of-a-kind luxury properties architectural masterpieces.
+                    </p>
+               </div>
+               {% for i in '12345'|make_list %}
+                    <div class="flex flex-col gap-3 p-5 bg-white rounded-xl">
+                         <img src="{% static 'images/buildings/building_01.jpg' %}"
+                              alt=""
+                              class="rounded-lg"
+                              width=""
+                              height="">
+                         <h3 class="text-2xl font-bold">Perum griya asri</h3>
+                         <p class="text-gray-500">Bogor, Jawa Barat</p>
+                         <div class="flex items-center justify-between">
+                              <p class="text-xl font-medium">Rent | $25,000</p>
+                              <p class="p-2 text-lg bg-light-primary rounded">
+                                   360<sup>m2</sup> <span class="text-gray-500 text-sm">Living Area</span>
+                              </p>
+                         </div>
+                         <a href="{% url 'listings:property_detail' 1 %}"
+                            class="py-3 btn-light rounded-xl text-center">View Details</a>
+                    </div>
+               {% endfor %}
+          </section>
+     </section>
 {% endblock %}
