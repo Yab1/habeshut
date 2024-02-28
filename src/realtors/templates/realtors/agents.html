@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+     <section class="flex flex-col gap-10 mb-11 bg-light-primary p-10 rounded-3xl">
+          <div>
+               <h2 class="text-5xl font-bold">Our Amazing Agents</h2>
+               <p class="w-[800px]">
+                    Explore our exceptional team of dedicated real estate professionals, committed to providing unparalleled service and expertise in the industry.
+               </p>
+          </div>
+          <div class="grid grid-cols-3 gap-10">
+               {% for i in '12345'|make_list %}
+                    <div class="overflow-hidden rounded relative group">
+                         <img src="{% static 'images/agents/agent.jpeg' %}"
+                              alt=""
+                              height=""
+                              width="">
+                         <div class="absolute inset-0 p-5 group-hover:flex gap-5 flex-col hidden text-white backdrop-brightness-50 bg-dark-primary/40">
+                              <h4 class="text-2xl font-medium">Anabella Geller</h4>
+                              <p class="text-sm text-gray-200">
+                                   Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Quisque velit nisi, pretium ut lacinia in, elementum id enim.
+                              </p>
+                              <ul class="flex flex-col gap-3 mt-auto">
+                                   <li class="flex justify-between font-semibold">
+                                        <p>Phone:</p>
+                                        <p class="font-normal">777 287 378 737</p>
+                                   </li>
+                                   <li class="flex justify-between font-semibold">
+                                        <p>Email:</p>
+                                        <p class="font-normal">annabella@example.com</p>
+                                   </li>
+                              </ul>
+                         </div>
+                    </div>
+               {% endfor %}
+          </div>
+     </section>
+{% endblock %}
