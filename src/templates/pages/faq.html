@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}About{% endblock %}
+{% block content %}
+ <section class="p-10 rounded-3xl bg-light-primary mb-11 grid grid-cols-2 gap-x-20">
+  <div class="col-span-full mb-10">
+   <h2 class="text-5xl font-bold">FAQ</h2>
+   <p class="w-[800px]">
+    Find answers to common queries about our services, properties, and the real estate process, ensuring a seamless experience for our clients.
+   </p>
+  </div>
+  {% for i in '123456123456'|make_list %}
+   <div class="flex flex-col gap-5 border-b border-dark-primary py-6">
+    <button class="flex justify-between items-center">
+     <h4 class="font-semibold">What is Habeshut and Why is the best real estate site?</h4>
+     <p class="text-4xl">+</p>
+    </button>
+    <p class="font-light hidden">
+     Habeshut is the premier real estate platform in Ethiopia, renowned for its extensive listings, professional services, and user-friendly interface. With a commitment to excellence and customer satisfaction, we provide unmatched property solutions for buyers, sellers, and renters across the nation.
+    </p>
+   </div>
+  {% endfor %}
+ </section>
+{% endblock %}
