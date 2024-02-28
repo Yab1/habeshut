@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+     <section>
+          <section class="rounded-3xl p-5 bg-light-primary grid">
+               <h2 class="text-5xl font-bold">Contact Us</h2>
+               <p class="w-[800px]">
+                    Questions? Our team is here to help! Whether you're buying, selling, or renting, we're dedicated to assisting you. Contact us via phone, email, or the form below. Let's find your dream property together!
+               </p>
+          </section>
+          <section class="my-11 grid grid-cols-2">
+               <form action="" method="post" class="flex flex-col items-center">
+                    {% csrf_token %}
+                    <input type="submit"
+                           value="Send Message"
+                           class="btn-light px-10 py-3 rounded-2xl cursor-pointer">
+               </form>
+               <div class="flex flex-col gap-10">
+                    <div class="flex gap-5">
+                         <img src="{% static 'images/icons/mail.png' %}"
+                              alt=""
+                              width="40"
+                              height="40"
+                              class="h-fit">
+                         <div class="flex flex-col gap-5">
+                              <h6 class="text-2xl font-medium">Say Hello</h6>
+                              <ul class="col-span-2 flex gap-2 flex-col">
+                                   <li>
+                                        <span class="text-gray-500">Email.</span> contact@example.com
+                                   </li>
+                                   <li>
+                                        <span class="text-gray-500">Phone.</span> +54 356 945234
+                                   </li>
+                              </ul>
+                         </div>
+                    </div>
+                    <div class="flex gap-5">
+                         <img src="{% static 'images/icons/pin.png' %}"
+                              alt=""
+                              width="40"
+                              height="40"
+                              class="h-fit">
+                         <div class="flex flex-col gap-5">
+                              <h6 class="text-2xl font-medium">Find us in</h6>
+                              <ul class="col-span-2 flex gap-2 flex-col">
+                                   <li>Bole Road, Addis Ababa, Ethiopia</li>
+                              </ul>
+                         </div>
+                    </div>
+                    <div class="flex gap-5">
+                         <img src="{% static 'images/icons/share.png' %}"
+                              alt=""
+                              width="40"
+                              height="40"
+                              class="h-fit">
+                         <div class="flex flex-col gap-5">
+                              <h6 class="text-2xl font-medium">Social networks</h6>
+                              <ul class="col-span-2 flex gap-4">
+                                   <li>
+                                        <button class="btn-dark p-2 rounded-md">
+                                             <img src="{% static 'images/icons/facebook.png' %}"
+                                                  alt=""
+                                                  width="20"
+                                                  height="20">
+                                        </button>
+                                   </li>
+                                   <li>
+                                        <button class="btn-dark p-2 rounded-md">
+                                             <img src="{% static 'images/icons/twitter.png' %}"
+                                                  alt=""
+                                                  width="20"
+                                                  height="20">
+                                        </button>
+                                   </li>
+                                   <li>
+                                        <button class="btn-dark p-2 rounded-md">
+                                             <img src="{% static 'images/icons/instagram.png' %}"
+                                                  alt=""
+                                                  width="20"
+                                                  height="20">
+                                        </button>
+                                   </li>
+                                   <li>
+                                        <button class="btn-dark p-2 rounded-md">
+                                             <img src="{% static 'images/icons/linkedin.png' %}"
+                                                  alt=""
+                                                  width="20"
+                                                  height="20">
+                                        </button>
+                                   </li>
+                              </ul>
+                         </div>
+                    </div>
+               </div>
+          </section>
+     </section>
+{% endblock %}
