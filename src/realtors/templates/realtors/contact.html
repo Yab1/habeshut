@@ -2,18 +2,19 @@
 {% load static %}
 {% block content %}
      <section>
-          <section class="rounded-3xl p-5 bg-light-primary grid">
+          <section class="grid p-5 rounded-3xl bg-light-primary">
                <h2 class="text-5xl font-bold">Contact Us</h2>
                <p class="w-[800px]">
                     Questions? Our team is here to help! Whether you're buying, selling, or renting, we're dedicated to assisting you. Contact us via phone, email, or the form below. Let's find your dream property together!
                </p>
           </section>
-          <section class="my-11 grid grid-cols-2">
-               <form action="" method="post" class="flex flex-col items-center">
+          <section class="grid grid-cols-2 gap-10 my-11">
+               <form action="" method="post" class="grid grid-cols-2 gap-3">
                     {% csrf_token %}
+                    {{ form }}
                     <input type="submit"
                            value="Send Message"
-                           class="btn-light px-10 py-3 rounded-2xl cursor-pointer">
+                           class="px-10 py-3 rounded-lg cursor-pointer btn-light col-span-full w-fit place-self-center">
                </form>
                <div class="flex flex-col gap-10">
                     <div class="flex gap-5">
@@ -24,7 +25,7 @@
                               class="h-fit">
                          <div class="flex flex-col gap-5">
                               <h6 class="text-2xl font-medium">Say Hello</h6>
-                              <ul class="col-span-2 flex gap-2 flex-col">
+                              <ul class="flex flex-col col-span-2 gap-2">
                                    <li>
                                         <span class="text-gray-500">Email.</span> contact@example.com
                                    </li>
@@ -42,7 +43,7 @@
                               class="h-fit">
                          <div class="flex flex-col gap-5">
                               <h6 class="text-2xl font-medium">Find us in</h6>
-                              <ul class="col-span-2 flex gap-2 flex-col">
+                              <ul class="flex flex-col col-span-2 gap-2">
                                    <li>Bole Road, Addis Ababa, Ethiopia</li>
                               </ul>
                          </div>
@@ -55,33 +56,33 @@
                               class="h-fit">
                          <div class="flex flex-col gap-5">
                               <h6 class="text-2xl font-medium">Social networks</h6>
-                              <ul class="col-span-2 flex gap-4">
-                                   <li>
-                                        <button class="btn-dark p-2 rounded-md">
+                              <ul class="flex col-span-2 gap-4">
+                                   <li class="border border-gray-200 rounded-md hover:border-dark-primary">
+                                        <button class="p-2 rounded-md btn-dark">
                                              <img src="{% static 'images/icons/facebook.png' %}"
                                                   alt=""
                                                   width="20"
                                                   height="20">
                                         </button>
                                    </li>
-                                   <li>
-                                        <button class="btn-dark p-2 rounded-md">
+                                   <li class="border border-gray-200 rounded-md hover:border-dark-primary">
+                                        <button class="p-2 rounded-md btn-dark">
                                              <img src="{% static 'images/icons/twitter.png' %}"
                                                   alt=""
                                                   width="20"
                                                   height="20">
                                         </button>
                                    </li>
-                                   <li>
-                                        <button class="btn-dark p-2 rounded-md">
+                                   <li class="border border-gray-200 rounded-md hover:border-dark-primary">
+                                        <button class="p-2 rounded-md btn-dark">
                                              <img src="{% static 'images/icons/instagram.png' %}"
                                                   alt=""
                                                   width="20"
                                                   height="20">
                                         </button>
                                    </li>
-                                   <li>
-                                        <button class="btn-dark p-2 rounded-md">
+                                   <li class="border border-gray-200 rounded-md hover:border-dark-primary">
+                                        <button class="p-2 rounded-md btn-dark">
                                              <img src="{% static 'images/icons/linkedin.png' %}"
                                                   alt=""
                                                   width="20"

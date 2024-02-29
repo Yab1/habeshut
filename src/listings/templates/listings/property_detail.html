@@ -3,7 +3,7 @@
 {% block title %}Sunshine Villa{% endblock %}
 {% block content %}
      <section class="mb-11">
-          <div class="flex items-center justify-between pl-10 ml-5 pr-3 border-l-4 border-dark-primary">
+          <div class="flex items-center justify-between pl-10 pr-3 ml-5 border-l-4 border-dark-primary">
                <div>
                     <h2 class="text-6xl font-medium">Sunshine Villa</h2>
                     <p class="text-xl">Addis Ababa, Ethiopia</p>
@@ -89,7 +89,7 @@
                </div>
           </section>
           <section class="flex gap-10 my-11">
-               <div class="bg-light-primary rounded-3xl p-5 flex-1 flex place-content-center">
+               <div class="flex flex-1 p-5 bg-light-primary rounded-3xl place-content-center">
                     <img src="{% static 'images/buildings/floor_plan_01.jpeg' %}"
                          alt=""
                          width=""
@@ -101,8 +101,8 @@
                     class="rounded-3xl"
                     alt="Exterior view of modern apartment building against a cloudy sky.">
           </section>
-          <section class="bg-light-primary p-5 rounded-3xl grid grid-cols-3 gap-10">
-               <h3 class="col-span-full relative text-3xl font-medium after:left-0 after:-bottom-2 after:absolute after:h-1 after:w-16 after:rounded after:bg-dark-secondary">
+          <section class="grid grid-cols-3 gap-10 p-5 bg-light-primary rounded-3xl">
+               <h3 class="relative text-3xl font-medium col-span-full after:left-0 after:-bottom-2 after:absolute after:h-1 after:w-16 after:rounded after:bg-dark-secondary">
                     Contact Agent
                </h3>
                <img src="{% static 'images/agents/agent.jpeg' %}"
@@ -126,11 +126,12 @@
                          </li>
                     </ul>
                </div>
-               <form action="" method="post">
+               <form action="" method="post" class="flex flex-col gap-3">
                     {% csrf_token %}
+                    {{ form }}
                     <input type="submit"
                            value="Send Message"
-                           class="btn-light px-10 py-3 rounded-2xl cursor-pointer">
+                           class="px-10 py-3 rounded-lg cursor-pointer btn-light w-fit">
                </form>
           </section>
      </section>
