@@ -6,6 +6,11 @@
 .btn-light {
   @apply text-lg font-bold text-white bg-dark-primary hover:bg-dark-secondary;
 }
+
 .btn-dark {
   @apply text-lg font-bold text-white bg-light-primary;
+}
+
+.form_input {
+  @apply px-3 py-2 border border-gray-300 rounded-md focus:border-dark-primary active:border-dark-primary;
 }
