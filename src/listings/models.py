@@ -1,10 +1,6 @@
-from email.mime import image
-from email.policy import default
-from enum import unique
-from random import choices
-from unittest.util import _MAX_LENGTH
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from realtors.models import Agent
 
 
 # Create your models here.
@@ -18,7 +14,10 @@ class Type(models.Model):
         VILLA = "Villa", _("Villa")
 
     name = models.CharField(
-        max_length=15, choices=Property_Type.choices, default=Property_Type.APARTMENT
+        max_length=15,
+        choices=Property_Type.choices,
+        default=Property_Type.APARTMENT,
+        unique=True,
     )
 
     def __str__(self):
@@ -35,7 +34,10 @@ class Status(models.Model):
         SELL = "Sell", _("Sell")
 
     name = models.CharField(
-        max_length=10, choices=Property_Status.choices, default=Property_Status.SELL
+        max_length=10,
+        choices=Property_Status.choices,
+        default=Property_Status.SELL,
+        unique=True,
     )
 
     def __str__(self):
@@ -46,10 +48,33 @@ class Status(models.Model):
         verbose_name_plural = "Property Status"
 
 
+class Aminitie(models.Model):
+    class Aminities(models.TextChoices):
+        Test = "Test", _("Test")
+
+    name = models.CharField(choices=Aminities.choices)
+
+
+class FloorPlan(models.Model):
+    image = models.ImageField(upload_to="floor_plans/")
+
+
+class Photo(models.Model):
+    image = models.ImageField(upload_to="photos/")
+
+
 class Property(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=64)
+    price = models.IntegerField()
     property_type = models.ForeignKey(Type, on_delete=models.SET_NULL, null=True)
     propery_status = models.ForeignKey(Status, on_delete=models.SET_NULL, null=True)
+    # location =
+    area = models.FloatField(
+        help_text="Enter the area of the property in square meters."
+    )
+    photos = models.ManyToManyField(Photo)
+    floor_plans = models.ManyToManyField(FloorPlan)
+    agent = models.ManyToManyField(Agent)
     description = models.TextField(default="", max_length=500, blank=True)
 
     def __str__(self):
