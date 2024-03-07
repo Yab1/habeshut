@@ -50,9 +50,26 @@ class Status(models.Model):
 
 class Aminitie(models.Model):
     class Aminities(models.TextChoices):
-        Test = "Test", _("Test")
+        BALCONY = "Balcony", _("Balcony")
+        CHILDRENS_PLAYGROUND = "Children's Playground", _("Children's Playground")
+        DECK = "Deck", _("Deck")
+        ELEVATOR = "Elevator", _("Elevator")
+        FITNESS_CENTER = "Fitness Center", _("Fitness Center")
+        GARDEN = "Garden", _("Garden")
+        HOT_TUB = "Hot Tub", _("Hot Tub")
+        MODERN_INTERIOR_DESIGN = "Modern Interior Design", _("Modern Interior Design")
+        OUTDOOR_KITCHEN = "Outdoor Kitchen", _("Outdoor Kitchen")
+        PARKING_SPACE = "Parking Space", _("Parking Space")
+        ROOFTOP_TERRACE = "Rooftop Terrace", _("Rooftop Terrace")
+        SOLAR_PANELS = "Solar Panels", _("Solar Panels")
+        SPA = "Spa", _("Spa")
+        SPORTS_COURT = "Sports Court", _("Sports Court")
+        SURVEILLANCE_SYSTEM = "Surveillance System", _("Surveillance System")
+        SWIMMING_POOL = "Swimming Pool", _("Swimming Pool")
 
-    name = models.CharField(choices=Aminities.choices)
+    name = models.CharField(
+        max_length=50, choices=Aminities.choices, default=Aminities.BALCONY, unique=True
+    )
 
 
 class FloorPlan(models.Model):
@@ -72,9 +89,16 @@ class Property(models.Model):
     area = models.FloatField(
         help_text="Enter the area of the property in square meters."
     )
+    beds = models.IntegerField(
+        help_text="Enter the number of bedrooms in the property."
+    )
+    bath = models.IntegerField(
+        help_text="Enter the number of bathrooms in the property."
+    )
     photos = models.ManyToManyField(Photo)
     floor_plans = models.ManyToManyField(FloorPlan)
     agent = models.ManyToManyField(Agent)
+    aminitie = models.ManyToManyField(Aminitie)
     description = models.TextField(default="", max_length=500, blank=True)
 
     def __str__(self):
