@@ -1,8 +1,18 @@
 {
+  "name": "habeshut",
+  "version": "1.0.0",
+  "main": "entry.js",
   "scripts": {
-    "dev": "tailwindcss -i src/static/tailwind/input.css -o src/static/css/output.css --watch"
+    "build": "webpack --config webpack.config.js",
+    "tailwind": "tailwindcss -i src/assets/styles/input.css -o src/static/styles/output.css --watch",
+    "dev": "webpack --watch --mode development"
   },
   "devDependencies": {
-    "tailwindcss": "^3.4.1"
-  }
+    "tailwindcss": "^3.4.1",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
