@@ -10,10 +10,10 @@
     <link rel="shortcut icon"
           type="image/png"
           href="{% static 'images/favicon.ico' %}">
-    <title>
-      {% block title %}Habeshut{% endblock %}
-    </title>
-    {% include 'head/css.html' %}
+    <title>Habeshut</title>
+    {% block head_content %}{% endblock %}
+    {% include 'head/style.html' %}
+    {% include 'head/script.html' %}
   </head>
   <body class="flex flex-col font-inter text-light-primary mx-14 my-11">
     <header class="flex items-center justify-between overflow-hidden rounded-full mb-11 bg-light-primary">
@@ -44,7 +44,7 @@
          class="py-5 pl-10 pr-8 rounded-l-lg btn-light">Contact Us</a>
     </header>
     <main>
-      {% block content %}{% endblock %}
+      {% block body_content %}{% endblock %}
     </main>
     <footer class="grid grid-cols-3 p-10 text-white gap-7 bg-dark-primary rounded-3xl">
       <h2 class="col-span-2 font-medium text-8xl ">Start Your Project Now!</h2>
