@@ -1,12 +1,19 @@
 {% extends 'base.html' %}
+{% load geojson_tags %}
+{% load leaflet_tags %}
 {% load static %}
-{% block content %}
+{% block head_content %}
+     {% leaflet_js %}
+     {% leaflet_css %}
+{% endblock %}
+{% block body_content %}
      <section>
           <section class="grid p-5 rounded-3xl bg-light-primary">
                <h2 class="text-5xl font-bold">Contact Us</h2>
                <p class="w-[800px]">
                     Questions? Our team is here to help! Whether you're buying, selling, or renting, we're dedicated to assisting you. Contact us via phone, email, or the form below. Let's find your dream property together!
                </p>
+               <div>{% leaflet_map "map" callback="map_init" %}</div>
           </section>
           <section class="grid grid-cols-2 gap-10 my-11">
                <form action="" method="post" class="grid grid-cols-2 gap-3">
@@ -95,4 +102,20 @@
                </div>
           </section>
      </section>
+     <script>
+          const geoJsonData = {
+               "type": "Feature",
+               "geometry": {
+               "type": "Point",
+               "coordinates": [33.9037111974, 9.48406084557]
+               },
+               "properties": {
+               "name": "Sample Point"
+               }
+               }
+          function map_init(map, options) {
+               var area = L.geoJson(geoJsonData).addTo(map);
+               map.fitBounds(area.getBounds());
+          }
+     </script>
 {% endblock %}
